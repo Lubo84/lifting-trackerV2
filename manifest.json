@@ -1,0 +1,21 @@
+{
+  "name": "4-Day Lifting Tracker",
+  "short_name": "LiftingTracker",
+  "description": "Track a 12-week, 4-day strength & hypertrophy program with built-in tips and reminders.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#002855",
+  "theme_color": "#002855",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

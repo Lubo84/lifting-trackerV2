@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>4-Day Lifting Tracker</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon-192.png">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <meta name="theme-color" content="#002855">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>4-Day Lifting Tracker</h1>
+    <span class="badge">12-Week Program</span>
+    <button class="secondary install" id="installBtn" style="display:none">Install App</button>
+  </header>
+
+  <div class="container">
+    <div class="card notice" id="iosInstall" style="display:none">
+      <strong>Using an iPhone?</strong>
+      <div style="margin-top:6px">
+        Install this as an app for the best experience:<br>
+        1) Tap the <em>Share</em> icon in Safari • 2) Choose <em>Add to Home Screen</em> • 3) Open from your Home Screen and allow notifications (optional).
+      </div>
+      <div class="kicker" style="margin-top:6px">Tip: iOS doesn’t show an “Install” button. Use the Share menu instead.</div>
+    </div>
+
+    <div class="card">
+      <div id="phase"></div>
+      <ul id="tips" class="kicker" style="margin-top:8px"></ul>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <h2>Plan</h2>
+          <label for="week">Week</label>
+          <select id="week"></select>
+          <label for="day" style="margin-top:8px">Day</label>
+          <select id="day"></select>
+          <hr>
+          <div class="notice">
+            <strong>Reminders</strong>
+            <div id="reminders" style="margin-top:8px"></div>
+            <button id="enableNotifs" class="secondary" style="margin-top:8px">Enable Notifications</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col" style="flex:2 1 520px">
+        <div class="card">
+          <h2>Workout</h2>
+          <div id="workout"></div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card">
+          <h2>Session Tools</h2>
+          <div class="tip">Total Volume: <span id="volume" style="font-weight:700">0 kg</span></div>
+          <div style="margin-top:10px">
+            <div class="timer" id="timer">—</div>
+            <div class="flex" style="margin-top:8px">
+              <button id="startTimer" class="primary">Start Rest Timer</button>
+              <button id="stopTimer" class="warn">Stop</button>
+              <button id="preset60" class="secondary">60s</button>
+              <button id="preset90" class="secondary">90s</button>
+              <button id="preset120" class="secondary">120s</button>
+            </div>
+          </div>
+          <hr>
+          <button id="exportData" class="secondary">Export Training Data</button>
+          <button id="importData" class="secondary">Import Training Data</button>
+          <input id="fileInput" type="file" accept="application/json" style="display:none">
+          <button id="resetDay" class="warn">Reset This Day</button>
+          <p class="kicker" style="margin-top:8px">
+            Progression heuristic: if you hit the <em>top</em> of the rep range on all sets with solid form, increase load next week (~2.5–5% upper, 5–7.5% lower).
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>How this works</h2>
+      <p>
+        This tracker auto-adapts sets/reps/rest by phase:
+        <strong>Weeks 1–4</strong> build a strength base •
+        <strong>Weeks 5–8</strong> push hypertrophy volume •
+        <strong>Weeks 9–11</strong> intensify with heavier loads •
+        <strong>Week 12</strong> deload and recover.
+      </p>
+      <p>
+        Your entries are saved privately in your browser (localStorage). Export a backup if you switch devices.
+        You can also install this as an app (Add to Home Screen).
+      </p>
+    </div>
+  </div>
+
+  <footer>© 2025 Lifting Tracker • Built for your 4-day program</footer>
+  <script src="app.js"></script>
+</body>
+</html>
